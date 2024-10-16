@@ -41,11 +41,8 @@ To get started with the **Create Solution Sign** solution repository, follow the
  ![additional_image](create_solution_sign.png)  <br>![additional_image](sample_sign.png)  <br>
     
 
-## Github    
-## https://github.com/JoeEberle/ 
-
-## Email 
-## josepheberle@outlook.com 
+## Github    https://github.com/JoeEberle/ 
+## Email  josepheberle@outlook.com 
 
     
 ![Developer](developer.png)
