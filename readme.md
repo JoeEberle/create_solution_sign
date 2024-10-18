@@ -1,6 +1,9 @@
 ![Image image_filename](solution_sign.png)
-    # Create Solution Sign 
-    ## A utility to create a new PNG sign for every solution.
+    
+# Create Solution Sign 
+
+## A utility to create a new PNG sign for every solution.
+
     ![Image image_filename](code.png)
 The **create_solution_sign** function generates a unique sign for each solution name, ensuring distinct visual representation for every solution.
 
@@ -27,9 +30,9 @@ To get started with the **Create Solution Sign** solution repository, follow the
 - Saves You Time 
 
 
-## Notebook Features
+## Code Features
 
-These Features are design to provide everything you need for **Knowledge Transfer** 
+These features are designed to provide everything you need for **Create Solution Sign** 
 
 - **Self Documenting** - Automatically identifes major steps in notebook 
 - **Self Testing** - Unit Testing for each function
@@ -39,6 +42,7 @@ These Features are design to provide everything you need for **Knowledge Transfe
 - **Self Debugging** - Enhanced python standard debugging
 - **Low Code** - or - No Code  - Most solutions are under 50 lines of code
 - **Educational** - Includes educational dialogue and background material
+
     
 ## List of Figures
  ![additional_image](create_solution_sign.png)  <br>![additional_image](sample_sign.png)  <br>
