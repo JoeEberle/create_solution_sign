@@ -17,6 +17,83 @@ def create_sign(word, font_size=100, font_color='lime', background_color='black'
     return plt
 
 
+
+import matplotlib.pyplot as plt
+import matplotlib.patheffects as pe
+from matplotlib.font_manager import FontProperties
+from io import BytesIO
+
+def create_sign_II(
+    word: str,
+    font_size: int = 120,
+    font_color: str = "lime",
+    background_color: str = "black",
+    glow_color: str = "lime",
+    glow_width: int = 6,
+    pad_px: int = 40,
+    font_path: str | None = None,
+    dpi: int = 200,
+    save_path: str | None = None,
+):
+    """
+    Render a glowing text 'sign' and optionally save to file.
+
+    Returns:
+        (fig, ax) if not saved, else the save_path.
+    """
+    # Normalize/title-case and prepare font
+    text = word.replace("_", " ").strip().title()
+    fp = FontProperties(fname=font_path) if font_path else None
+
+    # -- first: get text bbox to auto-size the figure --
+    tmp_fig, tmp_ax = plt.subplots()
+    tmp_ax.axis("off")
+    t = tmp_ax.text(
+        0, 0, text, fontsize=font_size, fontproperties=fp
+    )
+    tmp_fig.canvas.draw()
+    bbox = t.get_window_extent(renderer=tmp_fig.canvas.get_renderer())
+    plt.close(tmp_fig)
+
+    # Compute figure size from pixel bbox + padding
+    width_px = bbox.width + 2 * pad_px
+    height_px = bbox.height + 2 * pad_px
+    fig_w, fig_h = width_px / dpi, height_px / dpi
+
+    # -- render final figure --
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h), dpi=dpi)
+    ax.set_facecolor(background_color)
+    ax.axis("off")
+
+    # Center in axes using axes coords
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+
+    # Nice layered glow (thick → thin → face)
+    effects = [
+        pe.withStroke(linewidth=glow_width, foreground=glow_color, alpha=0.25),
+        pe.withStroke(linewidth=max(1, glow_width//2), foreground=glow_color, alpha=0.6),
+        pe.withStroke(linewidth=1, foreground=glow_color, alpha=0.9),
+    ]
+
+    ax.text(
+        0.5, 0.5, text,
+        ha="center", va="center",
+        fontsize=font_size, color=font_color,
+        fontproperties=fp,
+        path_effects=effects
+    )
+
+    fig.tight_layout(pad=0)
+
+    if save_path:
+        fig.savefig(save_path, facecolor=background_color, dpi=dpi, bbox_inches="tight", pad_inches=0)
+        plt.close(fig)
+        return save_path
+    return fig, ax
+
+
+
 def persist_plt(plt,filename): 
     # Save the figure as PNG if filename is provided
     if filename:
