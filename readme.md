@@ -4,11 +4,7 @@
 
 ## A utility to create a new PNG sign for every solution.
 
-    
-![Solution](code.png)
-
-    
-
+    ![Image image_filename](code.png)
 ## 🎨🖌️  Create Solution Sign
 
 The **create_solution_sign** function generates a unique sign for each solution name, ensuring distinct visual representation for every solution.
@@ -142,13 +138,7 @@ FILE
 
 
 <br>
-
-![Solution](code.png)
-
-    
-![Solution](code.png)
-
-    
+![Image image_filename](code.png)![Image image_filename](sample.png)
 ## Getting Started
 
 The goal of this solution is to **Jump Start** your development and have you up and running in 30 minutes. 
