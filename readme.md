@@ -63,13 +63,6 @@ FILE
 
 
 
-## 🎨🖌️  Create Solution Sign Story Board END TEST 
-
-
-
-
-
-
 ## 🎨🖌️  Create Solution Sign Story Board End.
 
 
@@ -136,13 +129,6 @@ FILE
 ![Image](Machine Learning.png)
 
 ![Image](sample_sign.png)
-
-
-
-
-## 🎨🖌️  Create Solution Sign Story Board END TEST 
-
-
 
 
 
